@@ -1,7 +1,7 @@
 # DSA Assignments
 
 This repository contains my solutions to **Data Structures & Algorithms (DSA)**.  
-My goal is to solve problems consistently and improve my C++ skills every day. 🚀
+My goal is to solve problems consistently and improve my C++ skills every day. 
 
 ---
 
