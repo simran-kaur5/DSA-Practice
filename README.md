@@ -1,11 +1,11 @@
-# 📚 DSA Assignments
+# DSA Assignments
 
 This repository contains my solutions to **Data Structures & Algorithms (DSA)**.  
 My goal is to solve problems consistently and improve my C++ skills every day. 🚀
 
 ---
 
-## 🛠 Languages & Tools
+##  Languages & Tools
 - **Language:** C++
 - **Compiler:** g++ / clang++
 - **IDE:** VS Code (or any preferred editor)
@@ -26,4 +26,4 @@ My goal is to solve problems consistently and improve my C++ skills every day. �
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/github-kaur5/DSA-Practice.git
+   git clone https://github.com/simran-kaur5/DSA-Practice.git
