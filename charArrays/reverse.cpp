@@ -15,6 +15,6 @@ void toUpper(char word[] , int n){
 int main(){
     char str [] = "Hello World";
     toUpper(str , strlen(str));
-    cout<<"Reversed = "<<word;
+    cout<<"Reversed = "<<str;
  return 0;
 }
