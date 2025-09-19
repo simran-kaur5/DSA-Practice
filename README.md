@@ -1,4 +1,4 @@
-# DSA Assignments
+# DSA Practice
 
 This repository contains my solutions to **Data Structures & Algorithms (DSA)**.  
 My goal is to solve problems consistently and improve my C++ skills every day. 
