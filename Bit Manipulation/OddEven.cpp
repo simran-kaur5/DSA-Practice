@@ -13,7 +13,7 @@ int main(){
     if(oddEven(num)){
         cout<<"number is even.";
     }else{
-        cout<<"number is odd"
+        cout<<"number is odd";
     }
     return 0;
 }
