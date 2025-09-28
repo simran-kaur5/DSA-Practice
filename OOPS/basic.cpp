@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
-class User{
-    int id;
+class User{   //created class
+    int id;   // by default private
     int pass;
-public:
+public:  
     string userName;
     User(string n , int i){
         userName = n;
         id =i;
     }
-    void set(int p){
+    void set(int p){   //access private data members
         pass = p;
     }
     void get(){
@@ -20,8 +20,8 @@ public:
 };
 int main(){
 
-    User u1("Alice" , 23697);
-    cout<<"Name: "<<u1.userName<<endl;
+    User u1("Alice" , 23697);  //created object from class
+    cout<<"Name: "<<u1.userName<<endl;    
     u1.set(579);
     u1.get();
     return 0;
