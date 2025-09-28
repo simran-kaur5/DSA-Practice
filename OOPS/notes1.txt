@@ -1,0 +1,48 @@
+1. Class
+
+A class is like a blueprint or template used to create objects.
+It defines what data (attributes) and what actions (methods) the objects will have.
+
+Example (in simple terms):
+Think of a class as the design of a car. It specifies what parts (engine, wheels, color) and actions (start, stop, honk) every car should have.
+
+
+2. Object
+
+An object is a real-world instance of a class.
+When you create (or "instantiate") a class, you get an object.
+
+Example:
+If the class is Car, an object might be myCar, which is a specific car with a color "red" and model "Tesla Model 3."
+
+
+3. Data Members (Attributes or Fields)
+
+Data members are variables inside a class that hold the data/state of the object.
+
+Example (Car):
+
+color
+
+speed
+
+fuelLevel
+
+Each object will have its own copy of these data members.
+
+
+4. Data Functions (Member Functions / Methods)
+
+Data functions are functions defined inside a class that operate on its data members.
+They describe the behavior of the object.
+
+Example (Car):
+
+startEngine()
+
+accelerate()
+
+applyBrakes()
+
+These functions can access and modify the object’s data members.
+

@@ -1,0 +1,26 @@
+1. Constructor
+
+A constructor is a special function inside a class that automatically runs when an object is created.
+Its purpose is to initialize data members of the class.
+
+Key Points about Constructors:
+
+1. Name of constructor = name of class.
+
+2. No return type (not even void).
+
+3. Called automatically when you create an object.
+
+4. You can have multiple constructors (called constructor overloading).
+
+
+
+2. Access Specifiers
+
+Access specifiers decide who can access the data members and functions of a class.
+There are three main access specifiers in C++:
+
+Specifier	           Who Can Access	                                              Use Case
+public	      Everyone (from anywhere in the program)     	         Functions that should be available to users
+private	          Only within the class itself	                      Protect data members, hide implementation details
+protected	     Class itself + derived (child) classes                        	Used in inheritance
