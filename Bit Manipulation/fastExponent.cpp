@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void power(int n , int x){
+void power(int n , int x){    //TC -> O(log n)
     int ans = 1;
     while(n>0){
         int last = n & 1;  //extract last digit
