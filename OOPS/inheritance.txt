@@ -1,0 +1,92 @@
+1. Definition
+
+Inheritance = mechanism to create new class (derived) from existing class (base).
+
+Promotes code reusability and hierarchical relationships.
+
+
+
+3. Modes of Inheritance
+Inheritance Mode	Base Class Members Access in Derived Class
+Public	public → public, protected → protected
+Protected	public → protected, protected → protected
+Private	public/protected → private
+
+
+4. Types of Inheritance
+
+Single Inheritance
+
+One base → one derived
+
+Example: class B : public A { };
+
+
+
+Multiple Inheritance
+
+Multiple base classes → one derived class
+
+Example: class C : public A, public B { };
+
+
+
+Multilevel Inheritance
+
+Derived class acts as base for another class
+
+Example: A → B → C
+
+
+
+Hierarchical Inheritance
+
+One base class → multiple derived classes
+
+Example: class B : public A; class C : public A;
+
+
+
+Hybrid Inheritance
+
+Combination of multiple + multilevel
+
+May lead to diamond problem (solved using virtual inheritance)
+
+
+
+5. Constructor/Destructor Behavior
+
+Base class constructor executes first, then derived class constructor.
+
+Destructor order is reverse (derived → base).
+
+
+
+6. Virtual Inheritance
+
+Used to avoid ambiguity in multiple inheritance (diamond problem).
+
+class A { };
+class B : virtual public A { };
+class C : virtual public A { };
+class D : public B, public C { }; // Only one A is inherited
+
+
+7. Advantages
+
+Code Reusability
+
+Modularity
+
+Extensibility (easy to add new features)
+
+
+
+8. Disadvantages
+
+Increases complexity
+
+Ambiguity issues in multiple inheritance
+
+Can lead to tight coupling between classes
