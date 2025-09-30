@@ -1,0 +1,41 @@
+Recursion
+
+Definition: A function that calls itself directly or indirectly to solve a problem.
+
+Key Components:
+
+Base Case: Condition to stop recursion (prevents infinite calls).
+
+Recursive Case: Part where the function calls itself.
+
+Syntax Example:
+
+int factorial(int n) {
+    if (n == 0) return 1;   // base case
+    return n * factorial(n-1); // recursive case
+}
+
+
+Types of Recursion:
+
+Direct Recursion: Function calls itself.
+
+Indirect Recursion: Function A calls B, and B calls A.
+
+Tail Recursion: Recursive call is the last statement.
+
+Non-Tail Recursion: Recursive call is not the last statement.
+
+Advantages:
+
+Simple and elegant solution for problems like factorial, Fibonacci, tree traversal.
+
+Disadvantages:
+
+Higher memory usage (stack).
+
+Risk of stack overflow if base case is missing or too deep recursion.
+
+Common Examples:
+
+Factorial, Fibonacci, Tower of Hanoi, Binary Search, Tree Traversal.
