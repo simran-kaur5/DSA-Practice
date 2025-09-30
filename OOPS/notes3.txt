@@ -1,0 +1,69 @@
+1. Encapsulation ->
+Definition: Wrapping data (variables) and methods (functions) together in a class.
+
+Purpose: Protects data from unauthorized access.
+
+C++ Feature: Access specifiers (private, protected, public).
+
+Example:
+
+class Student {
+private:
+    int age;
+public:
+    void setAge(int a) { age = a; }
+    int getAge() { return age; }
+};
+
+
+2. Abstraction ->
+
+Definition: Hiding internal implementation details and showing only essential features.
+
+Purpose: Simplifies complex systems.
+
+C++ Feature: Abstract classes and pure virtual functions.
+
+Example:
+
+class Shape {
+public:
+    virtual void draw() = 0; // pure virtual function
+};
+
+
+3. Inheritance->
+
+Definition: Mechanism to acquire properties and behavior of another class.
+
+Purpose: Code reusability.
+
+C++ Feature: : public (or protected/private) syntax.
+
+Example:
+
+class Animal { public: void eat() {} };
+class Dog : public Animal { public: void bark() {} };
+
+
+4. Polymorphism->
+
+Definition: Ability of an entity to take multiple forms.
+
+Purpose: Flexibility and dynamic behavior.
+
+C++ Feature:
+Compile-time (Overloading): Function & Operator Overloading
+
+Run-time (Overriding): Virtual functions
+
+Example:
+
+class Base {
+public:
+    virtual void show() { cout << "Base\n"; }
+};
+class Derived : public Base {
+public:
+    void show() override { cout << "Derived\n"; }
+};
