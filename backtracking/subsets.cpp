@@ -10,10 +10,10 @@ void subsets(string str , string ans){
     char ch = str[0];
 
     //take choice to add in answer
-    subsets(str.substr(1,str.length()-1), ans+ch);
+    subsets(str.substr(1,str.length()-1), ans+ch);   //decrease str by 1 and add it to ans
 
     //take choice not to add in answer
-    subsets(str.substr(1,str.length()-1) , ans);
+    subsets(str.substr(1,str.length()-1) , ans);   //decrease str by 1 but dont add it to ans
 }
 
 int main(){
