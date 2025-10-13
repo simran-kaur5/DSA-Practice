@@ -32,8 +32,24 @@ class list{
         }
     }
 
-    void search(Node *head,int key){
-        
+    int helper(Node* temp, int key){
+        if(temp==NULL){
+            return -1;
+        }
+        if(temp->data==key){
+            return 0;
+        }
+        int idx = helper(temp->next,key);
+
+        if(idx==-1){
+            return -1;
+        }
+        return idx+1;
+
+    }
+
+    int search(int key){
+        return helper(head,key);
     }
 
      void print(){
@@ -56,7 +72,7 @@ int main(){
     l1.push_front(2);
     l1.push_front(1);
     l1.print();
-    l1.search(head,2);
     
+    cout<<l1.search(2);
     return 0;
 }
