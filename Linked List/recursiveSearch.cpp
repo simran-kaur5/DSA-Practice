@@ -32,27 +32,8 @@ class list{
         }
     }
 
-    void search(int key){   //TC -> O(n)
-        if(head == NULL){
-            cout<<"Linked List is Empty."<<endl;
-            return;
-        }
-        if(head->data == key){
-            cout<<"Found the key";
-            return;
-        }else{
-            Node* temp = head;
-            while(temp!=NULL){
-                if(temp->data==key){
-                    cout<<"Key found."<<endl;
-                    return;
-                }
-                temp = temp->next;
-            }
-            if(temp==NULL){
-                cout<<"Key not found"<<endl;
-            }
-        }
+    void search(Node *head,int key){
+        
     }
 
      void print(){
@@ -75,7 +56,7 @@ int main(){
     l1.push_front(2);
     l1.push_front(1);
     l1.print();
-    l1.search(2);
+    l1.search(head,2);
     
     return 0;
 }
