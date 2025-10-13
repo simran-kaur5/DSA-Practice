@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 class Node{   //create individual nodes using class
+    public:
     int data;
     Node* next;
     Node(int val){
@@ -10,6 +11,7 @@ class Node{   //create individual nodes using class
 };
 
 class list{
+    public:
     Node* head;
     Node* tail;
 
