@@ -8,44 +8,55 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
-// Solution class
 class Solution {
 public:
-    // Detect the start of the cycle (LeetCode 142)
     ListNode* detectCycle(ListNode* head) {
-        if (!head || !head->next) return nullptr;
-
+        bool isCycle = false;
         ListNode* slow = head;
         ListNode* fast = head;
 
         // Detect cycle using Floyd's Tortoise and Hare
-        while (fast && fast->next) {
+        while (fast != nullptr && fast->next != nullptr) {
             slow = slow->next;
             fast = fast->next->next;
 
             if (slow == fast) {
-                // Cycle detected; find start of cycle
-                slow = head;
-                while (slow != fast) {
-                    slow = slow->next;
+                isCycle = true;
+                break;
+            }
+        }
+
+        if (isCycle) {
+            slow = head;
+
+            // Special case: cycle starts at head
+            if (fast == slow) {
+                while (fast->next != slow) {
                     fast = fast->next;
                 }
                 return slow;
+            } else {
+                // General case
+                while (fast != slow) {
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+                return fast;
             }
         }
+
         return nullptr; // No cycle
     }
 };
 
-int main() {    //copy full class to submit on leetcode
-    // Creating a linked list: 3 -> 2 -> 0 -> -4 -> 2 (cycle)
+int main() {
+    // Create a linked list: 3 -> 2 -> 0 -> -4 -> cycle back to 3
     ListNode* head = new ListNode(3);
     head->next = new ListNode(2);
     head->next->next = new ListNode(0);
     head->next->next->next = new ListNode(-4);
-
-    // Creating a cycle: last node points to second node
-    head->next->next->next->next = head->next;
+    // Create a cycle back to head
+    head->next->next->next->next = head;
 
     Solution sol;
     ListNode* cycleStart = sol.detectCycle(head);
