@@ -80,6 +80,8 @@ public:
             left = nextLeft;
             right = nextRight;
         }
+        //add last connection because if linked list is odd then left.size = 2 && right.size =3 so to add last connection 
+        //1->2->3->4->5 becomes 1->5->2->4->NULL before below step so to add 3 also //tail was equal to 4 and right is 3
 
         if(tail) tail->next = right; // safe connection
     }
