@@ -1,12 +1,12 @@
 #include<iostream>
 using namespace std;
-template<class D>
+template<class T>
 class Node{
     public:
-    D data;
+    T data;
     Node* next;
 
-    Node(D val){
+    Node(T val){
         data = val;
         next = NULL;
     }
