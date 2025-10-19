@@ -5,12 +5,12 @@ template <class T>   //using templates of class because stack can be of any data
 class stack{
     public:
     vector<T>vec;
-    void push(T val){
+    void push(T val){     //O(1)
         vec.push_back(val);
     }
 
     void pop(){
-        if(isEmpty()){
+        if(isEmpty()){      //O(1)
             cout<<"Stack is empty nothing to pop."<<endl;  //underflow
             return;
         }
@@ -18,14 +18,14 @@ class stack{
     }
 
     int top(){
-        if(isEmpty()){
+        if(isEmpty()){    //O(1)
             cout<<"Stack is empty nothing to display."<<endl;
             return -1;
         }
         return vec[vec.size()-1];
     }
 
-    bool isEmpty(){
+    bool isEmpty(){     //O(1)
         return vec.size()==0;
     }
 
