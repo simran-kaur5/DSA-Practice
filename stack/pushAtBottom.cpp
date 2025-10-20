@@ -1,7 +1,7 @@
 #include<iostream>
 #include<stack>
 using namespace std;
-void pushBottom(stack<int>&s , int val){
+void pushBottom(stack<int>&s , int val){    //TC -> O(n)
     if(s.size()==0){
         s.push(val);
         return;
