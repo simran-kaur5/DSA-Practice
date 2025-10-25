@@ -10,14 +10,16 @@ bool compare(pair<int,int>p1 , pair<int,int>p2){
 int maxLength(vector<pair<int,int>>p){
     int currEnd = p[0].second;
 
-    int chain = 0;
+    int chain = 1;
 
     sort(p.begin(),p.end(),compare);
 
     for(int i =1;i<p.size();i++){
         if(currEnd<=p[i].first){
             chain++;
+            currEnd = p[i].second;
         }
+        
     }
 
     return chain;
