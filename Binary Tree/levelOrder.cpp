@@ -39,11 +39,21 @@ void levelOrder(Node* root){
     queue<Node*>q;
 
     q.push(root);
+    q.push(NULL);   //to cout endl aftr a level
 
     while(!q.empty()){
         Node* curr = q.front();
         q.pop();
 
+        if(curr==NULL){
+            cout<<endl;
+
+            if(q.empty()){
+                break;
+            }
+
+            q.push(NULL); //for next level
+        }else{
         cout<<curr->data<<" ";
 
         if(curr->left){
@@ -52,6 +62,7 @@ void levelOrder(Node* root){
         if(curr->right){
             q.push(curr->right);
         }
+    }
     }
 }
 int main(){
