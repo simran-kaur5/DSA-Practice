@@ -29,7 +29,7 @@ Node* buildTree(vector<int>&nodes){
 
 }
 
-Node* lca(Node* root,Node*p,Node* q){
+Node* lca(Node* root,Node*p,Node* q){    //this approach takes o(n) TC and SC-> O(n)
     if(root==NULL){
         return NULL;
     }
