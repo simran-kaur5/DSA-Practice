@@ -50,9 +50,9 @@ void printInRange(Node* root,int st,int end){
         return;
     }
     if(st <= root->data && root->data <=end){
-        cout<<root->data<<" ";
 
         printInRange(root->left,st,end);
+        cout<<root->data<<" ";
         printInRange(root->right,st,end);
 
     }else if(st<=root->data){
