@@ -12,7 +12,7 @@ class student{
         this->marks = marks;
     }
 
-    bool operator < (const student &obj) const{
+    bool operator < (const student &obj) const{    //operator overloading
         return this->marks < obj.marks;
     }
 };
