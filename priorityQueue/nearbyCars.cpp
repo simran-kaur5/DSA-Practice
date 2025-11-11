@@ -12,7 +12,7 @@ class Car{
     }
 
     bool operator < (const Car &obj) const{
-        return this->dis > obj.dis;
+        return this->dis > obj.dis;   //olnly comparison of distance
     }
 };
 
