@@ -19,6 +19,5 @@ int main(){
         cout<<el<<" ";
     }
     cout<<endl;
-
     return 0;
 }
