@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include<queue>
 #include <list>
 using namespace std;
 
@@ -18,15 +19,39 @@ public:
         l[v].push_back(u);
     }
 
-    bool pathExist(int src, int des, vector<bool>& vis) {
+    bool pathExistDFS(int src, int des, vector<bool>& vis) {
         if (src == des) return true;
 
         vis[src] = true;
 
         for (int child : l[src]) {
             if (!vis[child]) {
-                if (pathExist(child, des, vis)) {
+                if (pathExistDFS(child, des, vis)) {
                     return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    bool pathExistBFS(int src, int des, vector<bool>& vis) {
+        queue<int> q;
+        q.push(src);
+        vis[src] = true;
+
+        while (!q.empty()) {
+            int curr = q.front();
+            q.pop();
+
+            if (curr == des) {
+                return true;
+            }
+
+            for (int child : l[curr]) {
+                if (!vis[child]) {
+                    q.push(child);
+                    vis[child] = true;
                 }
             }
         }
@@ -55,7 +80,7 @@ int main() {
 
     vector<bool> vis(n, false);
 
-    bool ans = g.pathExist(src, des, vis);
+    bool ans = g.pathExistBFS(src, des, vis);
 
     if (ans) 
         cout << "Path exists from " << src << " to " << des << endl;
