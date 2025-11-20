@@ -18,24 +18,27 @@ class Graph{
         l[v].push_back(u);
     }
 
-    void BFS(){   //TC -> O(V+E)
-        queue<int>q;
-        vector<bool>vis(V,false);
-
-        q.push(0);
-        vis[0]=true;
-        while(!q.empty()){
-            int curr = q.front();
-            q.pop();
-            cout<<curr<<" ";
-
-            for(int v:l[curr]){
-                if(!vis[v]){
-                    vis[v] = true;
-                    q.push(v);
+    bool cycleDetect(int u,vector<bool>&vis,int par){
+        vis[u]=true;
+        
+        for(int neigh:l[u]){
+            if(!vis[neigh]){
+                if(cycleDetect(neigh,vis,u)){
+                    return true;
+                }
+            }else{
+                if(par != u){
+                    return true;
                 }
             }
         }
+
+        return false;
+    }
+
+    bool DFS(){
+        vector<bool>vis(V,false);
+        return cycleDetect(0,vis,-1);  //we need also access of parent so we pass -1 for first node parent
     }
 
     void print(){
@@ -51,18 +54,16 @@ class Graph{
     }
 };
 int main(){
-    Graph g(7);
+    Graph g(3);
     g.addEdge(0,1);
+    g.addEdge(1,2);
     g.addEdge(0,2);
-    g.addEdge(1,3);
-    g.addEdge(2,4);
-    g.addEdge(3,4);
-    g.addEdge(4,5);
-    g.addEdge(3,5);
-    g.addEdge(5,6);
 
-    g.BFS();
-
+    if(g.DFS()){
+        cout<<"Cycle is detected."<<endl;
+    }else{
+        cout<<"Cycle is not present."<<endl;
+    }
 
     return 0;
 }
