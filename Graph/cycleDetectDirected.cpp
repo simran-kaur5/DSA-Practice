@@ -15,30 +15,32 @@ class Graph{
 
     void addEdge(int u,int v){
         l[u].push_back(v);
-        l[v].push_back(u);
     }
 
-    bool cycleDetect(int u,vector<bool>&vis,int par){
+    bool cycleDetect(int u,vector<bool>&vis,vector<bool>&recPath){
         vis[u]=true;
+        recPath[u]=true;
         
         for(int neigh:l[u]){
             if(!vis[neigh]){
-                if(cycleDetect(neigh,vis,u)){
+                if(cycleDetect(neigh,vis,recPath)){
                     return true;
                 }
             }else{
-                if(par != neigh){
+                if(recPath[u]==true){
                     return true;
                 }
             }
         }
-
+        recPath[u]=false;
         return false;
     }
 
     bool DFS(){
+        vector<bool>recPath(V,false);
         vector<bool>vis(V,false);
-        return cycleDetect(0,vis,-1);  //we need also access of parent so we pass -1 for first node parent
+
+        return cycleDetect(0,vis,recPath);  //we need also access of parent so we pass -1 for first node parent
     }
 
     void print(){
@@ -54,10 +56,10 @@ class Graph{
     }
 };
 int main(){
-    Graph g(3);
+    Graph g(4);
     g.addEdge(0,1);
     g.addEdge(1,2);
-    g.addEdge(0,2);
+    g.addEdge(2,0);
 
     if(g.DFS()){
         cout<<"Cycle is detected."<<endl;
