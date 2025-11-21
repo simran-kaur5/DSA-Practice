@@ -32,19 +32,16 @@ class Graph{
 
     bool bipartite(){
         queue<int>q;
-        vector<bool>vis(V,false);
         vector<int>color(V,-1);
         q.push(0);
         color[0]=0;
-        vis[0]=true;
 
         while(!q.empty()){
             int curr = q.front();
             q.pop();
 
             for(int child:l[curr]){
-                if(!vis[child]){
-                    vis[child]=true;
+                if(color[child] ==-1){
                     color[child] =!color[curr];
                     q.push(child);
                 }else{
