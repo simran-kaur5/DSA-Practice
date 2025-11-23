@@ -26,13 +26,13 @@ class Graph{
         path+=to_string(src);
 
         for(int child:l[src]){
-            if(!vis[child]){
+            if(!vis[child]){   //after making visited we are checking this for prevent to being in a loop
                 helper(child,des,vis,path);
             }
         }
 
         path.pop_back();
-        vis[src]=false;
+        vis[src]=false;  //so that is different path exits through same node that can be visited..
     }
 
     void DFS(){   
