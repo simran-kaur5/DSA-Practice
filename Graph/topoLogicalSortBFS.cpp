@@ -50,6 +50,15 @@ class Graph{
                 }
             }
         }
+
+        cout<<endl;
+        
+        for(int i =0;i<V;i++){
+            if(inD[i]>0){
+                cout<<"there exists a cycle in graph."<<endl;
+                break;
+            }
+        }
     }
     void print(){
         for(int idx=0;idx<V;idx++){
