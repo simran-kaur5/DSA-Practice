@@ -26,7 +26,7 @@ class Graph{
         }
     }
 
-    void topoLogical(){
+    void topoLogical(){  //also known as Kahn's Algo
         vector<int>inD(V,0);
         inDegree(inD);
         queue<int>q;
