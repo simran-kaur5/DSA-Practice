@@ -19,7 +19,7 @@ void Bellman(int src,vector<vector<Edge>>&graph,int V){
     vector<int>dis(V,INT_MAX);
     dis[src]=0;
     
-    for(int i =0;i<V-1;i++){
+    for(int i =0;i<V-1;i++){// TC-> O(V*E)
         for(int j =0;j<V;j++){
             for(Edge e:graph[j]){
                 if(dis[e.v]>dis[j]+e.wt){
@@ -49,6 +49,6 @@ int main(){
 
     graph[4].push_back(Edge(1,-1));
 
-    Bellman(0,graph,V);
+    Bellman(4,graph,V);
 
 }
