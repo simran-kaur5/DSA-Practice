@@ -31,6 +31,7 @@ class Graph{
             pq.pop();
 
             if(!MSTSet[u]){
+                cout<<u<< " "; 
                 ans+=cost;
                 MSTSet[u]=true;
                 for(pair<int,int> child:l[u]){    
@@ -40,7 +41,7 @@ class Graph{
                 }
             }
         }
-
+        cout<<endl;
         cout<<"Minimum cost need: "<<ans<<endl;
     }
 };
