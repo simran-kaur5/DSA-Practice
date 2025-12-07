@@ -27,6 +27,9 @@ class disjointSet{
     void unionByRank(int a,int b){
         int par1 = find(a);
         int par2 = find(b);
+        if(par1==par2){
+            cout<<"Already in same set"<<endl;
+        }
 
         if(rank[par1]==rank[par2]){
             par[par2]=par1;
