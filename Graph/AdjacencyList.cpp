@@ -4,25 +4,25 @@
 using namespace std;
 class Graph{
     int V;
-    list<pair<int,int>>*l;
+    list<int>*l;
     public:
 
     Graph(int v){
         V=v;
-        l= new list<pair<int,int>>[V];
+        l= new list<int>[V];
     }
 
     void addEdge(int u,int v,int c){
-        l[u].push_back({v,c});
-        l[v].push_back({u,c});
+        l[u].push_back(v);
+        l[v].push_back(u);
     }
 
     void print(){
         for(int idx=0;idx<V;idx++){
             
             cout<<idx<<" : [ ";
-            for(pair<int,int>p:l[idx]){
-                cout<<"[ "<<p.first<<" , "<<p.second<<"] ";
+            for(int i:l[idx]){
+                cout<<i;
             }
             cout<<" ] ";
             cout<<endl;
