@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int longestSub(string str1 , string str2,vector<vector<int>>dp){
+int longestSubMemo(string str1 , string str2,vector<vector<int>>dp){
     if(str1.length()==0 || str2.length()==0){
         return 0;
     }
@@ -15,10 +15,10 @@ int longestSub(string str1 , string str2,vector<vector<int>>dp){
     }
 
     if(str1[n-1]==str2[m-1]){
-        dp[n][m] = 1 + longestSub(str1.substr(0,n-1),str2.substr(0,m-1),dp);
+        dp[n][m] = 1 + longestSubMemo(str1.substr(0,n-1),str2.substr(0,m-1),dp);
     }else{
-        int ans1 = longestSub(str1.substr(0,n-1),str2,dp);
-        int ans2 = longestSub(str1,str2.substr(0,m-1),dp);
+        int ans1 = longestSubMemo(str1.substr(0,n-1),str2,dp);
+        int ans2 = longestSubMemo(str1,str2.substr(0,m-1),dp);
         dp[n][m] = max(ans1,ans2);
     }
 
@@ -34,7 +34,7 @@ int main(){
 
     vector<vector<int>>dp(n+1,vector<int>(m+1,-1));
 
-    cout<<longestSub(str1,str2,dp);
+    cout<<longestSubMemo(str1,str2,dp);
 
     return 0;
 }
