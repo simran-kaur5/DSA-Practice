@@ -30,7 +30,7 @@ public:
 
 int main() {
     int n;
-    cout << "Enter n: ";
+    cout << "Enter n up to 8: ";
     cin >> n;
 
     Solution sol;
